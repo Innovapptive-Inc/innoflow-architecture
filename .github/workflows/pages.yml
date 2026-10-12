@@ -27,8 +27,12 @@ jobs:
         run: |
           mkdir -p _site
           cp *.html _site/
-          # Serve the architecture doc at the site root
+          # Serve the v1 architecture doc at the site root
           cp InnoFlow-v1-architecture_draft.html _site/index.html
+          # Short version URLs: /v1/ and /v2/
+          mkdir -p _site/v1 _site/v2
+          cp InnoFlow-v1-architecture_draft.html _site/v1/index.html
+          cp InnoFlow-v2-architecture-modes.html _site/v2/index.html
           touch _site/.nojekyll
 
       - uses: actions/configure-pages@v5
